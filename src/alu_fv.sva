@@ -30,7 +30,7 @@ module alu_fv
   `define B  fu_data_i.operand_b
   `define OP fu_data_i.operation
 
-
+  logic [31:0] shift_val=$signed(`A) >>> `B[4:0]; //shift right arithmetic 
   // --- Assumptions (Combinational) ---
   assume property (!$isunknown(fu_data_i));
   assume property (fu_data_i.fu == ALU);
@@ -45,7 +45,8 @@ module alu_fv
 
   assert property (`OP == SLL |-> result_o == (`A << `B[4:0]));
   assert property (`OP == SRL |-> result_o == (`A >> `B[4:0]));
-  assert property (`OP == SRA |-> result_o == ($signed(`A[31:0]) >>> `B[4:0]));
+  assert property (`OP == SRA |-> result_o == (shift_val));
+
 
   assert property (`OP == EQ  |-> alu_branch_res_o == (`A == `B));
   assert property (`OP == NE  |-> alu_branch_res_o == (`A != `B));
@@ -62,3 +63,5 @@ module alu_fv
 endmodule
 
 bind alu alu_fv alu_fv_i(.*);
+
+
