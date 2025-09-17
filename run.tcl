@@ -16,6 +16,7 @@ analyze -sv {/home/vlsilab/CVA_jg_example/alu_fv.sva}
 
 
 elaborate -top alu
+#The given alu madule is completely combinational in nature, and reset sequence is applied by the surrounding modules, hence both clock and reset are set to "none"
 clock -none 
 reset -none
 prove -bg -all
