@@ -1,4 +1,4 @@
-Formal verification of Physical Memory Protection(PMP) unit of CVA6.
+Formal verification of Physical Memory Protection(PMP) unit of CVA6 on JASPER FPV.
 
 Top module: pmp_data_if.sv
 
