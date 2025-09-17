@@ -1,12 +1,17 @@
 Formal verification of Physical Memory Protection(PMP) unit of CVA6.
+
 Top module: pmp_data_if.sv
+
 pmp_data_if.sv: Responsible for the permission checks on translated addresses. 
                 If pmp rules and permissions associated with the address match with the data access type ,the memory access is granted , else a corresponding exception is raised to prevent the data access.
 
 heirarchy:
-pmp_data_if.sv
-  --pmp_if
-  --pmp_data
+
+    pmp_data_if.sv
+  
+    --pmp_if
+  
+    --pmp_data
 
 Assertions only verify the following address modess: OFF, TOR. Assertions for NAPOT mode will be made available soon. 
 
