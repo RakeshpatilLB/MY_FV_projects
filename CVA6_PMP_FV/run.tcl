@@ -1,3 +1,5 @@
+#TCL file compatible with JASPER FPV 
+#loads design, package, system verilog assertion files and runs the proof 
 analyze -sv {/home/vlsilab/cva6/core/include/config_pkg.sv}
 analyze -sv {/home/vlsilab/cva6/core/include/cv32a6_imac_sv32_config_pkg.sv}
 analyze -sv {/home/vlsilab/cva6/core/include/riscv_pkg.sv}
