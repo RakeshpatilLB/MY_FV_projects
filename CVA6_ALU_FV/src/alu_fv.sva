@@ -34,7 +34,7 @@ module alu_fv
   assume property (!$isunknown(fu_data_i));
   assume property (fu_data_i.fu == ALU);
   assume property (`OP inside {ADD,SUB,ANDL,ORL,XORL,SLL,SRL,SRA,EQ,NE,LTS,LTU,GES,GEU,SLTS,SLTU});
-
+//clock signal is not used ,because the cva6 ALU is completely combinational and independent of the clock.
   // --- Assertions (Combinational) ---
   assert property (`OP == ADD |-> result_o == (`A + `B));
   assert property (`OP == SUB |-> result_o == (`A - `B));
